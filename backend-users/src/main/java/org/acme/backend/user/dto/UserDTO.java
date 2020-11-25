@@ -8,7 +8,11 @@ public class UserDTO implements Serializable {
     
     private String name;
 
-    private String totalMoney;
+    private String lastname;
+
+    private Amount totalMoney;
+
+    private String avatar;
 
     public UserDTO() {
         super();
@@ -22,6 +26,28 @@ public class UserDTO implements Serializable {
         this.name = name;
     }
 
-    
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(final String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Amount getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(final Amount totalMoney) {
+        this.totalMoney = totalMoney;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(final String avatar) {
+        this.avatar = avatar;
+    }
     
 }
