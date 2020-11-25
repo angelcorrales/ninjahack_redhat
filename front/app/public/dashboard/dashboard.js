@@ -12,8 +12,11 @@
         type: "GET",
         success: function(respuesta){
                 $.each(respuesta, function(key, value) {
-                $("#dashboardMissions").append('<div class="card mt-3"><img src=../images/'+value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+value.amount.amount+ ' ' + value.amount.currency +'</h5><p class="card-text">'+value.description+'</p><a href="#" class="btn btn-secondary">Reclamar recompensa</a></div></div>')
+                $("#dashboardMissions").append('<div class="card mt-3"><img src=../images/'+value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+value.amount.amount+ ' ' + value.amount.currency +'</h5><p class="card-text">'+value.description+'</p><button class="btn btn-secondary reward">Reclamar recompensa</button></div></div>')
             });
+                $( ".reward" ).click(function() {
+                    $(this).removeClass('btn-secondary').addClass('btn-success').html('Recompensa reclamada')
+                });
         }
     });
 });
