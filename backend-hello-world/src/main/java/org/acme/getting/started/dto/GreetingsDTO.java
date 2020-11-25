@@ -1,8 +1,12 @@
 package org.acme.getting.started.dto;
 
-public class GreetingsDTO {
+import java.io.Serializable;
 
-    private String name;
+public class GreetingsDTO implements Serializable {
+
+    private static final long serialVersionUID = -6562406563103063223L;
+    
+	private String name;
     private String lastName;
 
     public GreetingsDTO() {
