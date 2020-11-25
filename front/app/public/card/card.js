@@ -1,11 +1,12 @@
  $( document ).ready(function() {
-    var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user";
+    var mockUser = "dashboard/user.json";
+    var mockUserMissions = "user-missions.json";
 
-   $.getJSON( user, function(response) {
-        $("#name").html(response.name);
+   $.getJSON( mockUser, function(response) {
+        $("#avatarImage")[0].src = "/images/" + response.avatar;
     });
 
-    var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/missions";
+    var urlDashboardMissionUrl = "https://backend-hello-world-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/hello/greeting";
 
     $.ajax({
         url: urlDashboardMissionUrl,
