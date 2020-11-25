@@ -3,8 +3,8 @@ package com.bbva.play.services.dto;
 import java.io.Serializable;
 
 public class MissionDto implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+    
+    private static final long serialVersionUID = 934200381965823305L;
 
     private String description;
     
