@@ -1,7 +1,24 @@
 [{
     "description": "Hacer la cama cada día",
+    "image" : "bed.jpg",
     "amount": {
-        "amount" : 50,
+        "amount" : 5,
+        "currency" : "€"
+    }
+},
+{
+    "description": "Jugar a la play el tiempo asignado",
+    "image" : "play.jpg",
+    "amount": {
+        "amount" : 25,
+        "currency" : "€"
+    }
+},
+{
+    "description": "No pelear con tus hermanos",
+    "image" : "brothers.jpg",
+    "amount": {
+        "amount" : 30,
         "currency" : "€"
     }
 }
