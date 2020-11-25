@@ -3,7 +3,7 @@
     var mockUserMissions = "user-missions.json";
 
    $.getJSON( mockUser, function(response) {
-        $("avatarImage").src = "/images/" + response.img;
+        $("#avatarImage")[0].src = "/images/" + response.img;
     });
 
     var urlDashboardMissionUrl = "https://backend-hello-world-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/hello/greeting";
