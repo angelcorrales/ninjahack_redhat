@@ -5,30 +5,62 @@
     <title>Tax Calulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="https://www.bbva.es/content/dam/public-web/global/images/logos/logo_bbva_blanco.svg" width="60" height="30" alt="">
         </a>
+        <span class="logo">Play</span>
     </nav>
 
     <div class="container pt-3">
-        <div>
-            <img id="avatarImage" src="/images/no-avatar.png" style="width: 200px; height: 200px"/>
-        </div>
-        <div class="container pl-3 pr-3" >
-            <span > TOTAL ACUMULADO: </span>
-            <span id="totalAcumulado"></span>
-            <img src="/images/bolsa-dinero.jpeg" style="width: 200px; height: 200px"/>
-        </div>
-
-        <div class="container pt-3">
-            <h4>Misiones activas</h4>
+            <div class="row">
+                <div class="col">
+                    <h3>Hola Ricardo</h3>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary">
+                    Ahorro acumulado <span class="badge badge-light">125€</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <div class="card mt-3"><img src="../images/ibai.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">10 €</h5><p class="card-text">Acostarte a tu hora todos los días by Ibai Llanos</p><a href="#" class="btn btn-primary">Me apunto</a></div></div>
+                        </div>
+                        <div class="carousel-item">
+                        <div class="card mt-3"><img src="../images/rubius.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">15 €</h5><p class="card-text">Utilizar la consola solo el tiempo establecido by El Rubius</p><a href="#" class="btn btn-primary">Me apunto</a></div></div>
+                        </div>
+                        <div class="carousel-item">
+                        <div class="card mt-3"><img src="../images/kun.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">20 €</h5><p class="card-text">Hacer 30 minutos de ejercicio cada día de la semana by Kun Agüero</p><a href="#" class="btn btn-primary">Me apunto</a></div></div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+            </div>
+            <h4 class="mt-3">Misiones activas</h4>
             <div id="dashboardMissions">
             </div>
+            <a type="button" class="btn btn-primary btn-lg btn-block mt-3" href="missions">Conseguir nuevas misiones</a>
         </div>
     </div>
 
