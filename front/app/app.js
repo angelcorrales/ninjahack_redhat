@@ -16,6 +16,12 @@ var express = require('express');
 var app = express();
 const path = require('path');
 
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname+'/public/dashboard/index.html'));
+});
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/dashboard/index.html'));
