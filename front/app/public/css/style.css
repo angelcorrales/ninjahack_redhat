@@ -5,3 +5,7 @@
 .logo {
     color: white !important
 }
+
+#name {
+    text-transform: capitalize;
+}
