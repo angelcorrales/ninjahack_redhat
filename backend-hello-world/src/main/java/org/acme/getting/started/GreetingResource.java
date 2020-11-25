@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.acme.getting.started.dto.GreetingsDTO;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 @Path("/hello")
@@ -15,9 +16,9 @@ public class GreetingResource {
     GreetingService service;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/greeting/{name}")
-    public String greeting(@PathParam String name) {
+    public GreetingsDTO greeting(@PathParam String name) {
         return service.greeting(name);
     }
 
