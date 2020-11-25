@@ -6,26 +6,26 @@ public class GreetingsDTO implements Serializable {
 
     private static final long serialVersionUID = -6562406563103063223L;
     
-	private String name;
-    private String lastName;
+    private String description;
+    private Amount amount;
 
     public GreetingsDTO() {
         super();
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getLastName(String name) {
-        return lastName;
+    public Amount getAmount() {
+        return amount;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setAmount(Amount amount) {
+        this.amount = amount;
     }
 }
