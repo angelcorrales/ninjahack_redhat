@@ -1,5 +1,6 @@
 {
     "name": "nombre",
     "lastname": "apellido",
-    "img": "avatar-default"
+    "img": "avatar-default.jpg",
+    "bolsa": ""
 }
