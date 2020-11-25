@@ -1,24 +1,24 @@
 [{
-    "description": "Hacer la cama cada día",
-    "image" : "bed.jpg",
+    "description": "Barrer el suelo despues de comer",
+    "image" : "barrer.jpg",
     "amount": {
         "amount" : 5,
         "currency" : "€"
     }
 },
 {
-    "description": "Jugar a la play el tiempo asignado",
-    "image" : "play.jpg",
+    "description": "Sacar al perro a pasear",
+    "image" : "perro-paseo.jpg",
     "amount": {
-        "amount" : 25,
+        "amount" : 5,
         "currency" : "€"
     }
 },
 {
-    "description": "No pelear con tus hermanos",
+    "description": "Aprobar el curso",
     "image" : "brothers.jpg",
     "amount": {
-        "amount" : 30,
+        "amount" : 100,
         "currency" : "€"
     }
 }
