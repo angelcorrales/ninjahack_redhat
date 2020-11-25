@@ -1,17 +1,17 @@
-package org.acme.user;
+package org.acme.backend.user;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import org.acme.dto.UserDTO;
+import org.acme.backend.user.dto.UserDTO;
 
 @ApplicationScoped
 public class UserService {
 
     public UserDTO getUser() {
 
-    	UserDTO user = new UserDTO();
+    	org.acme.backend.user.dto.UserDTO user = new UserDTO();
     	
-    	user.
+    	user.setName("turpin");
     	
         return user;
     }

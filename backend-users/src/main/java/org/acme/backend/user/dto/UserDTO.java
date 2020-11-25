@@ -1,4 +1,4 @@
-package org.acme.user.dto;
+package org.acme.backend.user.dto;
 
 import java.io.Serializable;
 
@@ -8,6 +8,8 @@ public class UserDTO implements Serializable {
     
     private String name;
 
+    private String totalMoney;
+
     public UserDTO() {
         super();
     }
@@ -16,8 +18,10 @@ public class UserDTO implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
+
+    
     
 }

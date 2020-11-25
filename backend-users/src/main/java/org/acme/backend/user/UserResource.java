@@ -1,4 +1,4 @@
-package org.acme.user;
+package org.acme.backend.user;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -6,7 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.acme.getting.started.dto.GreetingsDTO;
+import org.acme.backend.user.dto.UserDTO;
 
 @Path("/user")
 public class UserResource {
