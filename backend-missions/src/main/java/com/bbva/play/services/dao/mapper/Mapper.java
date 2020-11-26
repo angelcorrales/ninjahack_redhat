@@ -29,6 +29,7 @@ public class Mapper {
         }
 
         MissionsDto out = new MissionsDto();
+        out.setId(String.valueOf(in.getId()));
         out.setAmount(getAmount(in.getAmount(), in.getCurrency()));
         out.setDescription(in.getDescription());
         out.setImage(in.getImage());

@@ -2,16 +2,12 @@ package com.bbva.play.services.dao.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "missions")
 public class MissionsEntity extends PanacheEntity {
-
-    @NotNull
-    private String id;
 
     private String description;
 
@@ -23,11 +19,11 @@ public class MissionsEntity extends PanacheEntity {
 
     private String status;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,5 +65,10 @@ public class MissionsEntity extends PanacheEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "MissionsEntity [id=" + id + "]";
     }
 }

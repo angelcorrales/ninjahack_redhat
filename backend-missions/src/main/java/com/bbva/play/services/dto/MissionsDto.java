@@ -6,6 +6,8 @@ public class MissionsDto implements Serializable {
     
     private static final long serialVersionUID = 934200381965823305L;
 
+    private String id;
+
     private String description;
     
     private String image;
@@ -38,5 +40,13 @@ public class MissionsDto implements Serializable {
 
     public void setAmount(Amount amount) {
         this.amount = amount;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

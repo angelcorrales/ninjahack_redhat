@@ -1,6 +1,6 @@
 package com.bbva.play.services;
 
-import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -10,26 +10,33 @@ import com.bbva.play.services.dao.MissionsDao;
 import com.bbva.play.services.dto.Amount;
 import com.bbva.play.services.dto.MissionsDto;
 
+import org.jboss.logging.Logger;
+
 @ApplicationScoped
 public class MissionsService {
+
+    private static final Logger LOGGER = Logger.getLogger(MissionsService.class);
 
     @Inject
     MissionsDao dao;
 
     public List<MissionsDto> getMissions() {
-        return dao.getMissons();
-        /*List<MissionsDto> missions = new ArrayList<>();
-        missions.add(addMission("Hacer la cama cada día", "bed.jpg", 5.0, "€"));
-        missions.add(addMission("Jugar a la play el tiempo asignado", "play.jpg", 25.0, "€"));
-        missions.add(addMission("No pelear con tus hermanos", "brothers.jpg", 30.0, "€"));
-        return missions;*/
+        List<MissionsDto> missions = dao.getMissons();
+
+        // Convertimos la divisa en simbolo
+        missions.forEach((MissionsDto item) -> convertCurrencyToSymbol(item.getAmount()));
+        return missions;
     }
 
-    private MissionsDto addMission(String description, String image, Double amount, String currency) {
-        MissionsDto missionDto = new MissionsDto();
-        missionDto.setDescription(description);
-        missionDto.setImage(image);
-        missionDto.setAmount(new Amount(amount, currency));
-        return missionDto;
+    /*
+     * Metodo que convierte el literal del currency en formato ISO
+     * en el simbolo
+     */
+    private void convertCurrencyToSymbol(Amount in) {
+        if (null != in) {
+            String symbol = Currency.getInstance(in.getCurrency()).getSymbol();
+            LOGGER.info("Se convierte la divisa " + in.getCurrency() + " en el symbolo "+symbol);
+            in.setCurrency(symbol);
+        }
     }
 }
