@@ -19,8 +19,7 @@ $( document ).ready(() => {
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
                         +'</h5><p class="card-text">'+value.description
-                        +'</p><div class=""><span id="state"></span><button class="btn btn-danger cancel">Cancelar</button></div>'
-                        +'<div class="text-container text-center text-primary"> En Curso </div> </div></div>');
+                        +'</p><div class=""><span id="state"></span><button class="btn btn-primary cancel">Cancelar</button></div></div></div>');
                 }
                 //pending
                 if (value.state === 'ACTIVE') {
@@ -41,10 +40,10 @@ $( document ).ready(() => {
             });
 
             $( ".cancel" ).click(function() {
-                $(this).parent().hide();
-                $(this).parent().parent().children()[3].classList.remove('text-primary');
-                $(this).parent().parent().children()[3].classList.add('text-danger');
-                $(this).parent().parent().children()[3].innerText = 'Cancelada';
+                $(this).addClass('btn-danger');
+                $(this).removeClass('btn-primary');
+                $(this).html('Cancelada');
+                $(this).disable = true;
             });
 
             $( ".accept" ).click(function() {
