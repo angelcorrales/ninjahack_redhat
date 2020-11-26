@@ -1,21 +1,23 @@
 $( document ).ready(() => {
-    var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user";
+    var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/1";
 
    $.getJSON( user, function(response) {
         $("#name").html(response.name);
     });
 
-    var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/missions";
+    var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/1/missions";
                                   
     $.ajax({
         url: urlDashboardMissionUrl,
         type: "GET",
         success: function(respuesta){
             $.each(respuesta, function(key, value) {
-                $("#dashboardMissions").append('<div class="card mt-3"><a href="mission"><img src=../images/'
-                    +value.image+' class="card-img-top" alt="..."></a> <div class="card-body"><h5 class="card-title">'
-                    +value.amount.amount+ ' ' + value.amount.currency 
-                    +'</h5><span class="badge badge-dark">Misión BBVA Play</span><p class="card-text">'+value.description+'</p><button class="btn btn-primary reward">Reclamar recompensa</button></div></div>')
+                if (value.state == 'ACTIVE'){
+                    $("#dashboardMissions").append('<div class="card mt-3"><a href="mission"><img src=../images/'
+                        +value.image+' class="card-img-top" alt="..."></a> <div class="card-body"><h5 class="card-title">'
+                        +value.amount.amount+ ' ' + value.amount.currency 
+                        +'</h5><span class="badge badge-dark">Misión BBVA Play</span><p class="card-text">'+value.description+'</p><button class="btn btn-primary reward">Reclamar recompensa</button></div></div>')
+                }
             });
             $( ".reward" ).click(function() {
                 $(this).removeClass('btn-primary').addClass('btn-success').html('Recompensa reclamada')
