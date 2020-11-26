@@ -1,30 +1,39 @@
-package org.acme.backend.user.dto;
+package org.acme.backend.dao.dto;
 
 import java.io.Serializable;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-public class UserDTO implements Serializable {
+@Entity
+public class Users extends PanacheEntity implements Serializable {
 
     private static final long serialVersionUID = -6562406563103063223L;
     
-    private String id;
+    private Long id;
 
+    @NotNull
     private String name;
 
     private String lastname;
 
-    private Amount totalMoney;
+    private Double totalMoney;
 
     private String avatar;
 
-    public UserDTO() {
+    public Users() {
         super();
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final String id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -44,11 +53,11 @@ public class UserDTO implements Serializable {
         this.lastname = lastname;
     }
 
-    public Amount getTotalMoney() {
+    public Double getTotalMoney() {
         return totalMoney;
     }
 
-    public void setTotalMoney(final Amount totalMoney) {
+    public void setTotalMoney(final Double totalMoney) {
         this.totalMoney = totalMoney;
     }
 
