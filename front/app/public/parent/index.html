@@ -30,13 +30,17 @@
                 <h3>Hola <span id="name"> Fran </span></h3>
             </div>
         </div>
-        <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-pendingMission-tab" data-toggle="tab" href="#pendingMission" role="tab" aria-controls="nav-pendingMission" aria-selected="true"><h6>Pendiente</h6></a>
-            <a class="nav-item nav-link" id="nav-pendingMission-tab" data-toggle="tab" href="#reviewedMissions" role="tab" aria-controls="nav-reviewedMissions" aria-selected="false"><h6>Histórico</h6></a>
-            <a class="nav-item nav-link" id="nav-transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="nav-transactions" aria-selected="true"><h6>Tarjeta</h6></a>
+        <div class="nav nav-pills mt-3" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-ongoingMission-tab" data-toggle="tab" href="#ongoingMission" role="tab" aria-controls="nav-ongoingMission" aria-selected="true">En Curso</a>
+            <a class="nav-item nav-link" id="nav-pendingMission-tab" data-toggle="tab" href="#pendingMission" role="tab" aria-controls="nav-pendingMission" aria-selected="true">Pendiente</a>
+            <a class="nav-item nav-link" id="nav-reviewedMission-tab" data-toggle="tab" href="#reviewedMissions" role="tab" aria-controls="nav-reviewedMissions" aria-selected="false">Histórico</a>
+            <a class="nav-item nav-link" id="nav-transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="nav-transactions" aria-selected="true">Tarjeta</a>
+            <a class="nav-item nav-link" id="nav-recomend-tab" data-toggle="tab" href="#recomend" role="tab" aria-controls="nav-recomend" aria-selected="true">Asignar</a>
         </div>
         <div class="tab-content" id="tabContent">
-            <div id="pendingMission" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-pendingMission-tab">
+            <div id="ongoingMission" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-ongoingMission-tab">
+            </div>
+            <div id="pendingMission" class="tab-pane fade show" role="tabpanel" aria-labelledby="nav-pendingMission-tab">
                 <img id="emptyImage" src="../images/bottle.png" style="width: 100%" hidden/>
             </div>
             <div id="reviewedMissions" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-reviewedMissions-tab"></div>
@@ -81,11 +85,10 @@
                     </li>
                     </ul>
             </div>
+            <div id="recomend" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-recomend-tab"></div>
        </div>
     </div>
 
-
-    <script type="text/javascript" src="../js/utils.js"></script>
     <script type="text/javascript" src="../parent/parent.js"></script>
   </body>
 </html>
