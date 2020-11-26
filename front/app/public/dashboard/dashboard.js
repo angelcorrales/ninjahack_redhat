@@ -38,7 +38,11 @@ var meApunto = function(mission) {
     
     $("#dashboardMissions").append('<div class="card mt-3"><img src="'+imagen+'" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
         +cantidad 
-        +'</h5><p class="card-text">'+descripcion+'</p><a href="#" class="btn btn-secondary">Reclamar recompensa</a></div></div>')
+        +'</h5><p class="card-text">'+descripcion+'</p><button class="btn btn-primary reward">Reclamar recompensa</button></div></div>')
+
+    $( ".reward" ).click(function() {
+        $(this).removeClass('btn-primary').addClass('btn-success').html('Recompensa reclamada')
+    });
 }
 
 
