@@ -2,9 +2,11 @@ package com.bbva.play.services.dto;
 
 import java.io.Serializable;
 
-public class MissionDto implements Serializable {
+public class MissionsDto implements Serializable {
     
     private static final long serialVersionUID = 934200381965823305L;
+
+    private String id;
 
     private String description;
     
@@ -12,7 +14,7 @@ public class MissionDto implements Serializable {
 
     private Amount amount;
 
-    public MissionDto() {
+    public MissionsDto() {
         super();
     }
 
@@ -38,5 +40,13 @@ public class MissionDto implements Serializable {
 
     public void setAmount(Amount amount) {
         this.amount = amount;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

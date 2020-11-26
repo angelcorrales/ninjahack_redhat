@@ -23,4 +23,12 @@ public class Amount implements Serializable {
     public String getCurrency() {
         return currency;
     }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 }
