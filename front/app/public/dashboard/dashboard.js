@@ -12,8 +12,8 @@ $( document ).ready(() => {
         type: "GET",
         success: function(respuesta){
             $.each(respuesta, function(key, value) {
-                $("#dashboardMissions").append('<div class="card mt-3"><a href="/mission/index.html"><img src=../images/'
-                    +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
+                $("#dashboardMissions").append('<div class="card mt-3"><a href="mission"><img src=../images/'
+                    +value.image+' class="card-img-top" alt="..."></a> <div class="card-body"><h5 class="card-title">'
                     +value.amount.amount+ ' ' + value.amount.currency 
                     +'</h5><span class="badge badge-dark">Misión BBVA Play</span><p class="card-text">'+value.description+'</p><button class="btn btn-primary reward">Reclamar recompensa</button></div></div>')
             });
