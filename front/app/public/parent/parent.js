@@ -8,7 +8,7 @@ $( document ).ready(() => {
 
             $.each(respuesta, function(key, value) {
                 //ongoing
-                if (value.state === 'Active') {
+                if (value.status === 'Active') {
                     $("#ongoingMission").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
@@ -16,7 +16,7 @@ $( document ).ready(() => {
                         +'</p><div class=""><span id="state"></span><button class="btn btn-primary cancel">Cancelar</button></div></div></div>');
                 }
                 //pending
-                if (value.state === 'Pending') {
+                if (value.status === 'Pending') {
                     $("#pendingMission").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
@@ -24,7 +24,7 @@ $( document ).ready(() => {
                         +'</p><div class="row justify-content-between m-0"><button class="btn btn-success accept">Aceptar</button><span id="state"></span><button class="btn btn-danger deny">Rechazar</button></div></div></div>')
                 }
                 //reviewed
-                if (value.state === 'Accepted' || value.state === 'Deny') {
+                if (value.status === 'Accepted' || value.status === 'Deny') {
                     $("#reviewedMissions").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
@@ -84,11 +84,13 @@ $( document ).ready(() => {
         type: "GET",
         success: function(respuesta){
             $.each(respuesta, function(key, value) {
-                $("#recomend").append('<div class="card mt-3"><img src=../images/'
-                    +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
-                    +value.amount.amount+ ' ' + value.amount.currency 
-                    +'</h5><p class="card-text">'+value.description
-                    +'</p><div class="row justify-content-between m-0"><button class="btn btn-primary recomend-btn">Asignar</button></div></div></div>');
+                if(value.status == 'New'){
+                    $("#recomend").append('<div class="card mt-3"><img src=../images/'
+                        +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
+                        +value.amount.amount+ ' ' + value.amount.currency 
+                        +'</h5><p class="card-text">'+value.description
+                        +'</p><div class="row justify-content-between m-0"><button class="btn btn-primary recomend-btn">Asignar</button></div></div></div>');
+                }
             });
 
             $('.recomend-btn').click(function() {
