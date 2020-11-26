@@ -1,8 +1,8 @@
 package com.bbva.play.services.dao.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -10,7 +10,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "missions")
 public class MissionsEntity extends PanacheEntity {
 
-    @Id
+    @NotNull
     private String id;
 
     private String description;

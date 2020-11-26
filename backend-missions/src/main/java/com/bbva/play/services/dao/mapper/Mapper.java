@@ -15,7 +15,7 @@ public class Mapper {
 
     public static List<MissionsDto> listMissionsDaoDtoToListMissionsDto(List<MissionsEntity> in) {
         if (null == in || in.isEmpty()) {
-            return null;
+            return new ArrayList<>();
         }
 
         List<MissionsDto> out = new ArrayList<>();
