@@ -11,7 +11,6 @@ $( document ).ready(() => {
         url: urlDashboardMissionUrl,
         type: "GET",
         success: function(respuesta){
-
             $.each(respuesta, function(key, value) {
                 $("#dashboardMissions").append('<div class="card mt-3"><img src=../images/'
                     +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'

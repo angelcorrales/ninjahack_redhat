@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tax Calulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="/">
+            <img src="https://www.bbva.es/content/dam/public-web/global/images/logos/logo_bbva_blanco.svg" width="60" height="30" alt="">
+            <span class="logo">Play</span>
+        </a>
+        <a href="https://www.bbva.com/es/primeras-nociones-financieras-ninos-ahorrar-jugando/" target="_blank">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+        </a>
+    </nav>
+
+    <div class="container pt-3" id="mission-container">
+        <div class="card mt-3">
+            <img src="../images/perro-paseo.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title"> 5 € </h5>
+                <span class="badge badge-dark">Misión BBVA Play</span>
+                <p class="card-text">Sacar al perro a pasear</p>
+                
+                <div id="botonera" class="row mt-3">
+                    <div class="col">
+                        <a type="button" class="btn btn-outline-primary" href="#">
+                            <span>Abandonar</span>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-backspace-reverse" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+                                <path fill-rule="evenodd" d="M9.08 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7.08a1 1 0 0 0 .76-.35L14.682 8 9.839 2.35A1 1 0 0 0 9.08 2zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1H2zm7.854 4.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a type="button" class="btn btn-outline-primary" href="#">
+                            <span>Invitar Amigo</span>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+                                <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path d="M8 12c4 0 5 1.755 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../mission/mission.js"></script>
+  </body>
+</html>
