@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 import com.bbva.play.services.MissionsService;
-import com.bbva.play.services.dto.MissionDto;
+import com.bbva.play.services.dto.MissionsDto;
 
 @Path("/missions")
 public class MissionsResource {
@@ -18,7 +18,7 @@ public class MissionsResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<MissionDto> getMissions() {
+    public List<MissionsDto> getMissions() {
         return service.getMissions();
     }
 }
