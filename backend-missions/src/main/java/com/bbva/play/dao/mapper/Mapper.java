@@ -1,9 +1,9 @@
-package com.bbva.play.services.dao.mapper;
+package com.bbva.play.dao.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bbva.play.services.dao.entity.MissionsEntity;
+import com.bbva.play.dao.entity.MissionsEntity;
 import com.bbva.play.services.dto.Amount;
 import com.bbva.play.services.dto.MissionsDto;
 

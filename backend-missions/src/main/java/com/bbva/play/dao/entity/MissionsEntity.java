@@ -1,4 +1,4 @@
-package com.bbva.play.services.dao.entity;
+package com.bbva.play.dao.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

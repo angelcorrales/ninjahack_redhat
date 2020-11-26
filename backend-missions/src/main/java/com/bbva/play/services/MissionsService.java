@@ -6,7 +6,7 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import com.bbva.play.services.dao.MissionsDao;
+import com.bbva.play.dao.MissionsDao;
 import com.bbva.play.services.dto.Amount;
 import com.bbva.play.services.dto.MissionsDto;
 
