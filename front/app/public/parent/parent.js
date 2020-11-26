@@ -40,6 +40,7 @@ $( document ).ready(() => {
                   +descripcion+'</p><span id="state" class="text-success">Aceptada</span></div></div>');
 
                 card.parent().remove();
+                checkEmpty();
 
             });
             $( ".deny" ).click(function() {
@@ -52,9 +53,15 @@ $( document ).ready(() => {
                   +'" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                   +cantidad+'</h5><p class="card-text">'
                   +descripcion+'</p><span id="state" class="text-danger">Rechazada</span></div></div>');
-                $(this).closest('#pendingMission').append('<img src="/images/bottle.png" width="100%">')
+
                 card.parent().remove();
+                checkEmpty();
             });
+            checkEmpty = function(){
+                if ( $('#pendingMission').children().length == 1) {
+                    $('#emptyImage')[0].hidden = false
+                }
+            }
         }
     });
 });

@@ -2,12 +2,11 @@ package org.acme.backend.dao.dto;
 
 import java.io.Serializable;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import java.util.List;
 
 @Entity
 public class Users extends PanacheEntity implements Serializable {
@@ -68,5 +67,7 @@ public class Users extends PanacheEntity implements Serializable {
     public void setAvatar(final String avatar) {
         this.avatar = avatar;
     }
+
+
     
 }

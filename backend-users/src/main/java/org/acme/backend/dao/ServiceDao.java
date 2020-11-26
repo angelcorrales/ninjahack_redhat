@@ -5,8 +5,9 @@ import org.acme.backend.dao.dto.*;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 import java.util.List;
+import io.quarkus.panache.common.*;
+
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
@@ -22,9 +23,23 @@ public class ServiceDao {
 
     @Transactional(SUPPORTS)
     public Users findUserById(Long id) {
-        //List<Users> allPersons = Users.listAll();
-        //return allPersons.get(0);
         return Users.findById(id);
+    }
+
+    @Transactional(SUPPORTS)
+    public List<UserMissions> findMissionsByUser(Long id) {
+        //return Users.findById(id);
+
+
+        //Parameters p = new Parameters();
+        //p.and("user", id);
+        //UserMission.list("sss", p);
+
+        //UserMission.list("SELECT * FROM usermission WHERE relatedUser = :user",id );
+        //return UserMission.list("relatedUser", id);
+
+
+        return null;
     }
 
 

@@ -17,21 +17,21 @@ public class UserService {
     @Inject
     ServiceDao dao;
 
-    public UserDTO getUser() {
+    public UserDTO getUser(Long id) {
 
-        //UserDTO user = addUser("turpin","perez",555.0,"avatar.jpg");
-        
-        Users userdao = dao.findUserById(new Long(1));
-
-        UserDTO user = addUser(userdao.getName(), userdao.getLastname(), userdao.getTotalMoney(), userdao.getAvatar());
+        Users userdao = dao.findUserById(id);
+        UserDTO user = null;
+        if (userdao != null){
+            user = addUser(userdao.getId() ,userdao.getName(), userdao.getLastname(), userdao.getTotalMoney(), userdao.getAvatar());
+        }
 
         return user;
     }
 
 
-    private UserDTO addUser(String name, String lastname, Double totalMoney, String avatar) {
+    private UserDTO addUser(Long id, String name, String lastname, Double totalMoney, String avatar) {
         UserDTO userDTO = new UserDTO();
-        userDTO.setId("1");
+        //userDTO.setId(id.toString());
         userDTO.setName(name);
         userDTO.setLastname(lastname);
         userDTO.setTotalMoney(new Amount(totalMoney, "€"));
@@ -41,16 +41,25 @@ public class UserService {
 
 
 
-    public List<MissionDto> getUserMissions() {
+    public List<MissionDto> getUserMissions(Long id) {
         List<MissionDto> missions = new ArrayList<>();
-        missions.add(addMission("Hacer la cama cada día", "bed.jpg", 5.0, "€","ACTIVE"));
-        missions.add(addMission("Jugar a la play el tiempo asignado", "play.jpg", 25.0, "€","ACTIVE"));
-        missions.add(addMission("No pelear con tus hermanos", "study.jpg", 30.0, "€","INACTIVE"));
+
+        List<UserMissions> list = dao.findMissionsByUser(id);
+
+        list.stream().forEach((p) -> {
+            missions.add(addMission(p.getId(),p.getDescription(),p.getImage(),p.getAmount(),"€",p.getState()));
+        });
+
+        //missions.add(addMission("Hacer la cama cada día", "bed.jpg", 5.0, "€","ACTIVE"));
+        //missions.add(addMission("Jugar a la play el tiempo asignado", "play.jpg", 25.0, "€","ACTIVE"));
+        //missions.add(addMission("No pelear con tus hermanos", "study.jpg", 30.0, "€","INACTIVE"));
+
         return missions;
     }
 
-    private MissionDto addMission(String description, String image, Double amount, String currency, String state) {
+    private MissionDto addMission(Long id, String description, String image, Double amount, String currency, String state) {
         MissionDto missionDto = new MissionDto();
+        missionDto.setId(id.toString());
         missionDto.setDescription(description);
         missionDto.setImage(image);
         missionDto.setAmount(new Amount(amount, currency));
