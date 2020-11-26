@@ -52,7 +52,7 @@ $( document ).ready(() => {
                   +'" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                   +cantidad+'</h5><p class="card-text">'
                   +descripcion+'</p><span id="state" class="text-danger">Rechazada</span></div></div>');
-
+                $(this).closest('#pendingMission').append('<img src="/images/bottle.png" width="100%">')
                 card.parent().remove();
             });
         }
