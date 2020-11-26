@@ -20,6 +20,8 @@ public class UserResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/")
+    //@Path("/")
+    //public UserDTO getUser(@PathParam("id") Long id) {
     public UserDTO getUser() {
         return service.getUser();
     }
