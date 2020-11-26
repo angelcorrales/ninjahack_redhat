@@ -13,6 +13,16 @@ $( document ).ready(() => {
         success: function(respuesta){
 
             $.each(respuesta, function(key, value) {
+                //ongoing
+                if (value.state === 'ACTIVE') {
+                    $("#ongoingMission").append('<div class="card mt-3"><img src=../images/'
+                        +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
+                        +value.amount.amount+ ' ' + value.amount.currency 
+                        +'</h5><p class="card-text">'+value.description
+                        +'</p><div class=""><span id="state"></span><button class="btn btn-danger cancel">Cancelar</button></div>'
+                        +'<div class="text-container text-center text-primary"> En Curso </div> </div></div>');
+                }
+                //pending
                 if (value.state === 'ACTIVE') {
                     $("#pendingMission").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
@@ -20,6 +30,7 @@ $( document ).ready(() => {
                         +'</h5><p class="card-text">'+value.description
                         +'</p><div class="row justify-content-between m-0"><button class="btn btn-success accept">Aceptar</button><span id="state"></span><button class="btn btn-danger deny">Rechazar</button></div></div></div>')
                 }
+                //reviewed
                 if (value.state === 'Accepted' || value.state === 'Deny') {
                     $("#reviewedMissions").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
@@ -27,14 +38,15 @@ $( document ).ready(() => {
                         +'</h5><p class="card-text">'+value.description
                         +'</p><div class="row justify-content-between m-0"><button class="btn btn-success accept">Aceptar</button><span id="state"></span><button class="btn btn-danger deny">Rechazar</button></div></div></div>')
                 }
-                if (value.state === 'Pending' || value.state === 'Deny') {
-                    $("#ongoigMissions").append('<div class="card mt-3"><img src=../images/'
-                        +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
-                        +value.amount.amount+ ' ' + value.amount.currency 
-                        +'</h5><p class="card-text">'+value.description
-                        +'</p><span id="state" class="text-primary">En curso</span></div></div>');
-                }
             });
+
+            $( ".cancel" ).click(function() {
+                $(this).parent().hide();
+                $(this).parent().parent().children()[3].classList.remove('text-primary');
+                $(this).parent().parent().children()[3].classList.add('text-danger');
+                $(this).parent().parent().children()[3].innerText = 'Cancelada';
+            });
+
             $( ".accept" ).click(function() {
                 var card = $(this).parent().parent();
                 var cantidad = card.find('h5').html();
