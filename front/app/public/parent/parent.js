@@ -1,11 +1,5 @@
 $( document ).ready(() => {
-   /* var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user";
-
-   $.getJSON( user, function(response) {
-        $("#name").html(response.name);
-    });*/
-
-    var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/missions";
+    var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/1/missions";
                            
     $.ajax({
         url: urlDashboardMissionUrl,
@@ -14,7 +8,7 @@ $( document ).ready(() => {
 
             $.each(respuesta, function(key, value) {
                 //ongoing
-                if (value.state === 'ACTIVE') {
+                if (value.state === 'Active') {
                     $("#ongoingMission").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
@@ -22,7 +16,7 @@ $( document ).ready(() => {
                         +'</p><div class=""><span id="state"></span><button class="btn btn-primary cancel">Cancelar</button></div></div></div>');
                 }
                 //pending
-                if (value.state === 'ACTIVE') {
+                if (value.state === 'Pending') {
                     $("#pendingMission").append('<div class="card mt-3"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 

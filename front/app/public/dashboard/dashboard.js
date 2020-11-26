@@ -12,7 +12,7 @@ $( document ).ready(() => {
         type: "GET",
         success: function(respuesta){
             $.each(respuesta, function(key, value) {
-                if (value.state == 'ACTIVE'){
+                if (value.state == 'Active'){
                     $("#dashboardMissions").append('<div class="card mt-3"><a href="mission"><img src=../images/'
                         +value.image+' class="card-img-top" alt="..."></a> <div class="card-body"><h5 class="card-title">'
                         +value.amount.amount+ ' ' + value.amount.currency 
