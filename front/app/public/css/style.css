@@ -9,3 +9,8 @@
 #name {
     text-transform: capitalize;
 }
+
+.carousel-control-prev, .carousel-control-next {
+    height: 50%;
+    margin-top: 25%;
+}

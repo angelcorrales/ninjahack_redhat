@@ -4,21 +4,34 @@ import javax.enterprise.context.ApplicationScoped;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 
+import org.acme.backend.dao.dto.*;
 import org.acme.backend.user.dto.*;
+
+import org.acme.backend.dao.ServiceDao;
 
 @ApplicationScoped
 public class UserService {
 
+    @Inject
+    ServiceDao dao;
+
     public UserDTO getUser() {
 
-    	UserDTO user = addUser("turpin","perez",555.0,"avatar.jpg");
+        //UserDTO user = addUser("turpin","perez",555.0,"avatar.jpg");
+        
+        Users userdao = dao.findUserById(new Long(1));
+
+        UserDTO user = addUser(userdao.getName(), userdao.getLastname(), userdao.getTotalMoney(), userdao.getAvatar());
 
         return user;
     }
 
-        private UserDTO addUser(String name, String lastname, Double totalMoney, String avatar) {
+
+    private UserDTO addUser(String name, String lastname, Double totalMoney, String avatar) {
         UserDTO userDTO = new UserDTO();
+        userDTO.setId("1");
         userDTO.setName(name);
         userDTO.setLastname(lastname);
         userDTO.setTotalMoney(new Amount(totalMoney, "€"));

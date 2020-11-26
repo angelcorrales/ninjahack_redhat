@@ -1,9 +1,9 @@
 $( document ).ready(() => {
-    var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user";
+   /* var user = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user";
 
    $.getJSON( user, function(response) {
         $("#name").html(response.name);
-    });
+    });*/
 
     var urlDashboardMissionUrl = "https://backend-users-2-aporebote-ninjahack.apps.cluster-142f.142f.example.opentlc.com/user/missions";
                                   
@@ -13,13 +13,23 @@ $( document ).ready(() => {
         success: function(respuesta){
 
             $.each(respuesta, function(key, value) {
-                $("#dashboardMissions").append('<div class="card mt-3"><img src=../images/'
+                $("#parentMissions").append('<div class="card mt-3"><img src=../images/'
                     +value.image+' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'
                     +value.amount.amount+ ' ' + value.amount.currency 
-                    +'</h5><span class="badge badge-dark">Misión BBVA Play</span><p class="card-text">'+value.description+'</p><button class="btn btn-primary reward">Reclamar recompensa</button></div></div>')
+                    +'</h5><p class="card-text">'+value.description
+                    +'</p><div class="row justify-content-between m-0"><button class="btn btn-success accept">Aceptar</button><span id="state"></span><button class="btn btn-danger deny">Rechazar</button></div></div></div>')
             });
-            $( ".reward" ).click(function() {
-                $(this).removeClass('btn-primary').addClass('btn-success').html('Recompensa reclamada')
+            $( ".accept" ).click(function() {
+                $(this).parent().find('button')[0].hidden = true
+                $(this).parent().find('button')[1].hidden = true
+                $(this).parent().find('#state')[0].innerHTML = "Aceptada";
+                $(this).parent().find('#state')[0].classList.add('text-success');
+            });
+            $( ".deny" ).click(function() {
+                $(this).parent().find('button')[0].hidden = true
+                $(this).parent().find('button')[1].hidden = true
+                $(this).parent().find('#state')[0].innerHTML = "Rechazada";
+                $(this).parent().find('#state')[0].classList.add('text-danger');
             });
         }
     });
